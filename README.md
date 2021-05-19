@@ -1,3 +1,7 @@
+# Kanban-Board
+This is a starter implementation of a kanban board to get more understandings about React complex state management using reducers.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

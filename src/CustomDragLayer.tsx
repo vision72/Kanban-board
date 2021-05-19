@@ -1,0 +1,17 @@
+import { useDragLayer } from 'react-dnd';
+import { Column } from './Column';
+import { CustomDragLayerContainer } from './styles';
+import { useAppState } from './state/AppStateContext';
+
+export const CustomDragLayer = () => {
+	const { draggedItem } = useAppState();
+	const { currentOffset } = useDragLayer((monitor) => ({
+		currentOffset: monitor.getSourceClientOffset()
+	}));
+
+	return draggedItem && currentOffset ? (
+		<CustomDragLayerContainer>
+			<Column id={draggedItem.id} title={draggedItem.title} />
+		</CustomDragLayerContainer>
+	) : null;
+};
